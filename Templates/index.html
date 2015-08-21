@@ -1,0 +1,191 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>MSurvivalCraft</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+	<script type="text/javascript">
+	function goto(where) 
+	{
+		window.location = "#" + where;
+	}
+	function gotourl(where)
+	{
+		window.location = where;
+	}
+	</script>
+</head> 
+<body> 
+
+<!-- Start of first page -->
+<div data-role="page" id="Home">
+
+	<div data-role="header">
+		<button onclick="goto('Home')">Home</button>
+		<button onclick="goto('Map')">Map</button>
+		<button onclick="goto('Apply')">Apply</button>
+		<button onclick="gotourl('/View')">View Posts</button>
+		<button onclick="goto('Request')">Request</button>
+		<button onclick="gotourl('/Requests')">View Requests</button>
+		<h1>SurvivalCraft - Home</h1>
+	</div><!-- /header -->
+
+	<div data-role="content" align="center">	
+		<h1>Welcome To Survival Craft</h1>
+		<p>Survival Craft is a fun player freindly smei-vanilla survival server</p>
+		<p>Server IP: 86.29.223.173</p>
+	<image src='{{ url_for("static", filename = "spawn.png") }}' frameborder="0" scrolling="yes" seamless="seamless" style="display:block; width:50vh; height:50vh;">
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Website Programed By Server Owner<br />Ross Searle</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+<!-- Start of second page -->
+<div data-role="page" id="Map">
+
+	<div data-role="header">
+		<button onclick="goto('Home')">Home</button>
+		<button onclick="goto('Map')">Map</button>
+		<button onclick="goto('Apply')">Apply</button>
+		<button onclick="gotourl('/View')">View Posts</button>
+		<button onclick="goto('Request')">Request</button>
+		<button onclick="gotourl('/Requests')">View Requests</button>
+		<h1>SurvivalCraft - Server Map</h1>
+	</div><!-- /header -->
+
+	<div data-role="content" align="center">	
+		<iframe src="http://86.29.223.173:8123/" frameborder="0" scrolling="yes" seamless="seamless" style="display:block; width:100%; height:80vh;"></iframe>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Website Programed By Server Owner<br />Ross Searle</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+<!-- Start of second page -->
+<div data-role="page" id="Apply">
+
+	<div data-role="header">
+		<button onclick="goto('Home')">Home</button>
+		<button onclick="goto('Map')">Map</button>
+		<button onclick="goto('Apply')">Apply</button>
+		<button onclick="gotourl('/View')">View Posts</button>
+		<button onclick="goto('Request')">Request</button>
+		<button onclick="gotourl('/Requests')">View Requests</button>
+		<h1>SurvivalCraft - Apply</h1>
+	</div><!-- /header -->
+
+	<div data-role="content" align="center">	
+		<h1>Please fill this fourm out to apply for staff</h1>
+		<form method="POST", action='/Post/'>
+			<label>Full Name</label>
+			<br />
+			<input type="text" name="fn">
+			<br />
+			<label>In-Game Username</label>
+			<br />
+			<input type="text" name="ign">
+			<label>Age</label>
+			<br />
+			<input type="text" name="age">
+			<br/>
+			<label>Email</label>
+			<br />
+			<input type="text" name="email">
+			<br/>
+			<label>Do you use Team Speak 3?</label>
+			</formbr />
+			<select name="ts">
+				<option>Yes</option>
+				<option>No</option>
+			</select>
+			<br />
+			<label>Why Should you be staff?</label>
+			<br />
+			<textarea name="why"></textarea>
+			<br />
+			<label>Tell us about yourself</label>
+			<br />
+			<textarea name="about"></textarea>
+			<br />
+			<label>What will you offer</label>
+			<br />
+			<textarea name="offer"></textarea>
+			<br />
+			<label>Scenario: Someone is griefing, what do you do? (As musch detail as posssible please)</label>
+			<br />
+			<textarea name="sone"></textarea>
+			<br />
+			<label>Scenario: Someone is Swearing and vurbaly abuseing other players, what do you do? (As musch detail as posssible please)</label>
+			<br />
+			<textarea name="stwo"></textarea>
+			<br />
+			<label>Scenario: Someone is Keep asking for free items and higher ranks like op or staff, what do you do? (As musch detail as posssible please)</label>
+			<br />
+			<textarea name="sthree"></textarea>
+			<br />
+			<p>By clicking agree you agree to have the information you have enterd and are posting publicaly avaliable on this website.<br />
+			if A feild is left blank the application will be deleted!!!</p>
+			<input type="submit" value="Agree" name="submit">
+		</form>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Website Programed By Server Owner<br />Ross Searle</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+<!-- Start of second page -->
+<div data-role="page" id="Request">
+
+	<div data-role="header">
+		<button onclick="goto('Home')">Home</button>
+		<button onclick="goto('Map')">Map</button>
+		<button onclick="goto('Apply')">Apply</button>
+		<button onclick="gotourl('/View')">View Posts</button>
+		<button onclick="goto('Request')">Request</button>
+		<button onclick="gotourl('/Requests')">View Requests</button>
+		<h1>SurvivalCraft - Request</h1>
+	</div><!-- /header -->
+
+	<div data-role="content" align="center">	
+		<h1>Request for a additon to the server</h1>
+		<form method="POST", action='/Request/'>
+			<label>Full Name</label>
+			<br />
+			<input type="text" name="fn">
+			<br />
+			<label>In-Game Username</label>
+			<br />
+			<input type="text" name="ign">
+			<label>Age</label>
+			<br />
+			<input type="text" name="age">
+			<br/>
+			<label>Email, if you dont use a vlaid email the page will not load</label>
+			<br />
+			<input type="text" name="email">
+			<br/>
+			<label>What should be added, link to plugin if it is a plugin</label>
+			<br />
+			<input type="text" name="what">
+			<br />
+			<label>Breif 30 letter description of request. Please use a "_" or "-" as a space please as spaces will not show in end result(only applys for this box) thank you</label>
+			<br />
+			<input type="text" maxlength="30" name="b">
+			<input type="submit" value="Agree" name="submit">
+		</form>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Website Programed By Server Owner<br />Ross Searle</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+
+</body>
+</html>

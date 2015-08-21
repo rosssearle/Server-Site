@@ -1,0 +1,94 @@
+<html class="ui-mobile"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>Post</title> 
+	<link rel="stylesheet" href="//code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css">
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script><style type="text/css"></style>
+	<script src="//code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+		<script type="text/javascript">
+	function goto(where) 
+	{
+		window.location = "#" + where;
+	}
+	function gotourl(where)
+	{
+		window.location = where;
+	}
+	</script>
+</head> 
+
+<body class="ui-mobile-viewport"> 
+
+<div data-role="page" tabindex="0" class="ui-page ui-body-c ui-page-active" style="min-height: 588px;">
+
+	<div data-role="header" class="ui-header ui-bar-a" role="banner">
+		<button onclick="gotourl('/#Home')">Home</button>
+		<button onclick="gotourl('/#Map')">Map</button>
+		<button onclick="gotourl('/#Apply')">Apply</button>
+		<button onclick="gotourl('/View')">View Posts</button>
+		<button onclick="gotourl('/#Request')">Request</button>
+		<button onclick="gotourl('/Requests')">View Requests</button>
+		<h1>SurvivalCraft - View Post (
+		{% if name %}
+			{{name}}
+		{% endif %}
+		)</h1>
+	</div><!-- /header -->
+
+	<div data-role="content" class="ui-content" role="main" align="center">	
+		<h4>Full Name:
+		{% if name %}
+			{{name}}
+		{% endif%}</h4>
+		<h4>In-Game Name:
+		{% if ign %}
+			{{ign}}
+		{% endif%}</h4>
+		<h4>Age:
+		{% if age %}
+			{{age}}
+		{% endif%}</h4>
+		<h4>Team Speak 3:
+		{% if ts %}
+			{{ts}}
+		{% endif%}</h4>
+		<h4>Why should i become staff:
+		{% if why %}
+			{{why}}
+		{% endif%}</h4>
+		<h4>About me:
+		{% if about %}
+			{{about}}
+		{% endif%}</h4>
+		<h4>What i will offer:
+		{% if offer %}
+			{{offer}}
+		{% endif%}</h4>
+		<h4>Scenario: Someone is griefing, what do you do?:
+		{% if sone %}
+			{{sone}}
+		{% endif%}</h4>
+		<h4>Scenario: Someone is Swearing and vurbaly abuseing other players, what do you do?:
+		{% if stwo %}
+			{{stwo}}
+		{% endif%}</h4>
+		<h4>Scenario: Someone is Kepp asking for free items and higher ranks like op or staff, what do you do?:
+		{% if sthree %}
+			{{sthree}}
+		{% endif%}</h4>
+		{% if error %}
+		<h1>{{error}}
+		{% else %}
+		<button onclick='gotourl("/View/" +  {{ namens|tojson }} + "/Accept")'>Accept</button>
+		<button onclick='gotourl("/View/" +  {{ namens|tojson }} + "/Deny")'>Deny</button>
+		{% endif %}
+	</div><!-- /content -->
+	
+	<div data-role="footer" class="ui-footer ui-bar-a" role="contentinfo">
+		<h4>Website Programed By Server Owner<br />Ross Searle</h4>
+	</div><!-- /footer -->
+	
+</div><!-- /page -->
+
+
+<div class="ui-loader ui-body-a ui-corner-all" style="top: 477.5px;"><span class="ui-icon ui-icon-loading spin"></span><h1>loading</h1></div></body></html>
